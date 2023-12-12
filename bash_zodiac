@@ -1,0 +1,31 @@
+#!/bin/bash
+##################################
+# color
+##################################
+
+PS1_COLOR_BEGIN="\[\e[01;33m\]"
+PS1_COLOR_END="\[\e[01;00m\]"
+PS1_STR="\u@\h: "
+export PS1="${PS1_COLOR_BEGIN}${PS1_STR}\W${PS1_COLOR_END}\$ "
+export LS_COLORS='di=1;34'
+
+
+##################################
+#PATH
+##################################
+
+export PATH="$HOME/home/terao/qe-6.7/bin:$PATH"
+export PATH="$HOME/home/terao/.cmd:$PATH"
+export PATH="$HOME/home/terao/.qEcalc/*:$PATH"
+export PATH="$HOME/home/terao/miniconda3/bin:$PATH"
+export PATH="$HOME/package/OpenBLAS/lib:$PATH"
+export PATH="$HOME/package/arpack-ng/lib:$PATH"
+export PATH="$HOME/wannier_tools/bin:$PATH"
+export PATH="$HOME/qe-6.7/wannier90-3.1.0/utility:$PATH"
+VIMTEMPLATE='/home/terao/.vim/templates'
+
+source ~/.qEcalc/qEcalc/qEcmd
+source ~/.qEcalc/makecalc/mkclcmd
+
+
+
