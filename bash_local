@@ -1,0 +1,35 @@
+#!/bin/bash
+##################################
+# color
+##################################
+
+PS1_COLOR_BEGIN="\[\e[1;36m\]"
+PS1_COLOR_END="\[\e[1;00m\]"
+PS1_STR="\h: "
+export PS1="${PS1_COLOR_BEGIN}${PS1_STR}\W${PS1_COLOR_END}\$ "
+export LIBGL_ALWAYS_INDIRECT=1
+
+
+##################################
+# ssh
+##################################
+alias zodiac='ssh -Y zodiac'
+alias cmpt='ssh -Y cmpt-serv'
+
+alias rr='scp -r cmpt-serv:~/send_local/* /home/yudai/receive_remote/'
+alias sr='scp -r /home/yudai/send_remote/* cmpt-serv:~/receive_local/'
+alias rz='scp -r zodiac:~/send_local/* /home/yudai/receive_remote/'
+alias sz='scp -r /home/yudai/send_remote/* zodiac:~/receive_local/'
+alias rt='scp -r toki:~/send_local/* /home/yudai/receive_remote/'
+alias st='scp -r /home/yudai/send_remote/* toki:~/receive_local/'
+
+alias rzz='scp -r zodiac:~/.qEcalc/qEplot/*.pdf /home/yudai/test'
+
+
+##################################
+# latex, pdf
+##################################
+alias pdf='wsl-open' $1
+alias ms='latexmk ; mv *\.fdb_latexmk work/ && wsl-open *.pdf'
+
+

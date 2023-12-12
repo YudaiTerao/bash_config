@@ -1,6 +1,6 @@
 #!/bin/bash
 ##################################
-# alias
+# aliases
 ##################################
 
 alias ll='ls -alF'
@@ -17,6 +17,9 @@ alias vrc='vim ~/.vim/.vimrc'
 
 alias path='echo $PATH'
 alias clip='xsel --clipboard --input'
+
+alias obadd='git ls-files | xargs -i git add {}'
+alias grm='git rm --cached'
 
 ##################################
 #function
