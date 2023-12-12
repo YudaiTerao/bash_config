@@ -6,7 +6,7 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias dh='du -h -s ./*'
+#alias dh='du -h -s ./* | sort -k 1'
 
 alias cb='cd ~/.bash_config'
 
@@ -24,6 +24,14 @@ alias grm='git rm --cached'
 ##################################
 #function
 ##################################
+function dh(){
+    du -h -s ./* | grep ^[0-9]*T | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9]*G | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9]*M | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9]*K | sed -e "s/\.\///g" | column -t | sort -n -r
+}
+
+
 
 function count(){
         ls -1U $1 | wc -l
