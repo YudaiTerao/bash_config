@@ -25,10 +25,10 @@ alias grm='git rm --cached'
 #function
 ##################################
 function dh(){
-    du -h -s ./* | grep ^[0-9]*T | sed -e "s/\.\///g" | column -t | sort -n -r
-    du -h -s ./* | grep ^[0-9]*G | sed -e "s/\.\///g" | column -t | sort -n -r
-    du -h -s ./* | grep ^[0-9]*M | sed -e "s/\.\///g" | column -t | sort -n -r
-    du -h -s ./* | grep ^[0-9]*K | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9.]*T | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9.]*G | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9.]*M | sed -e "s/\.\///g" | column -t | sort -n -r
+    du -h -s ./* | grep ^[0-9.]*K | sed -e "s/\.\///g" | column -t | sort -n -r
 }
 
 
