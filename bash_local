@@ -30,6 +30,6 @@ alias rzz='scp -r zodiac:~/.qEcalc/qEplot/*.pdf /home/yudai/test'
 # latex, pdf
 ##################################
 alias pdf='wsl-open' $1
-alias ms='latexmk ; mv *\.fdb_latexmk work/ && wsl-open *.pdf'
+alias ms='latexmk '$1'; mv *\.fdb_latexmk work/ && wsl-open *.pdf'
 
 
