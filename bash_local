@@ -30,6 +30,22 @@ alias rzz='scp -r zodiac:~/.qEcalc/qEplot/*.pdf /home/yudai/test'
 # latex, pdf
 ##################################
 alias pdf='wsl-open' $1
-alias ms='latexmk '$1'; mv *\.fdb_latexmk work/ && wsl-open *.pdf'
+alias pf='wsl-open *.pdf' 
 
+alias bal='vim ~/.bash_config/bash_local'
 
+function ms(){
+    nw=`pwd` ; nw=${nw##*/}
+    latexmk $nw.tex
+    mkdir -p work 
+    ls -F -1 | grep -v '/' | grep -v '\.pdf' | grep -v '\.tex' | xargs -i mv {} work
+    for i in {1..1000}; do
+        if [ -f ./${nw}_${i}.pdf ]; then
+            mv ./${nw}_${i}.pdf ./work/
+        elif [ ! -f ./work/${nw}_${i}.pdf ]; then
+            mv $nw.pdf ${nw}_${i}.pdf
+            pdf ${nw}_${i}.pdf
+            break
+        fi
+    done
+}

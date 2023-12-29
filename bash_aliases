@@ -31,8 +31,6 @@ function dh(){
     du -h -s ./* | grep ^[0-9.]*K | sed -e "s/\.\///g" | column -t | sort -n -r
 }
 
-
-
 function count(){
         ls -1U $1 | wc -l
 }
